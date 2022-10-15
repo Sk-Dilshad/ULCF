@@ -1,0 +1,30 @@
+modules:
+  jira:adminPage:
+    - key: userlevelcustomfield-main-admin-page
+      resource: main
+      resolver:
+        function: resolver
+      title: User Level Custom Fields
+      sections:
+        - header: User Level Custom Fields
+          pages:
+            - title: Configuration
+              route: '/configuration'
+            - title:  My Fields
+              route: '/MyFields'  
+  function:
+    - key: resolver
+      handler: index.handler
+      # displayConditions:
+      #    isLoggedIn: true 
+resources:
+  - key: main
+    path: static/main/build
+permissions:
+  scopes:
+    - storage:app
+  content:
+    styles:
+      - 'unsafe-inline'    
+app:
+  id: ari:cloud:ecosystem::app/da9eae7c-c627-4be4-b86a-480736db08c9
