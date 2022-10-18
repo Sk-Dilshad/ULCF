@@ -1,8 +1,14 @@
 import React from "react";
+import FormComponent from '../component/FormComponent';
 
-const FieldConfigurationPage=()=>{
+const FieldConfigurationPage=(props)=>{
+
+  const setFormDataHandler=(data)=>{
+    console.log("data:::",data)
+   props.setFormData(data)
+  }
   return(
-    <h2>Configuration Page</h2>
+   <FormComponent  FormDataHandler={setFormDataHandler}/>
   )
 }
 export default FieldConfigurationPage;

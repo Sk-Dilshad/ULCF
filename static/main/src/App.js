@@ -43,7 +43,9 @@ function App() {
     useEffect(() => {
         invoke('getText', { example: 'my-invoke-variable' }).then(setData);
     }, []);
-
+  const setFormDataInStorageHandler=(formData)=>{
+     console.log("formData::::",formData)
+  }
     const main = (
         <Main
             id="main-content"
@@ -55,7 +57,7 @@ function App() {
                             navigationType={historyState.action}
                             location={historyState.location}
                         >
-                            <Route path="/configuration" element={<FieldConfigurationPage /> } />
+                            <Route path="/configuration" element={<FieldConfigurationPage   setFormData={setFormDataInStorageHandler} /> } />
                             <Route path="/MyFields" element={<AdvanceProfilePage />   } />
   
                         </Routes>
